@@ -71,7 +71,7 @@ nav-link {
     color: #fff;
     text-decoration: none;
     font-size: 14px;
-    margin: 0px 8px;
+    margin: 0px 16px;
   }
 }
 </style>

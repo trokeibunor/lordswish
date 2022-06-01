@@ -9,6 +9,10 @@
         <button id="hire">Hire me</button>
       </div>
     </section>
+    <section id="featuredworks">
+      <h3 id="featured">Featured Works</h3>
+      <hr />
+    </section>
   </div>
 </template>
 
@@ -90,6 +94,18 @@ export default {
     }
     #hire:hover {
       background: rgba(255, 255, 255, 0.137);
+    }
+  }
+}
+#featuredworks {
+  width: 60%;
+  margin: 4rem auto 2rem auto;
+  #featured {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    hr {
+      color: #fff;
     }
   }
 }
