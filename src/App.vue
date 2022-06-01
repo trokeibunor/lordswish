@@ -6,12 +6,14 @@
       class="illustration"
       srcset=""
     />
-    <h4 class="name">LORD'SWISH.</h4>
     <nav-link>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <a href="#">Portfolio</a>
-      <a href="#">Contact me</a>
+      <p id="name">LORD'SWISH.</p>
+      <div>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact me</a>
+      </div>
     </nav-link>
   </nav>
   <RouterView />
@@ -55,10 +57,21 @@ nav {
   display: flex;
   flex-direction: row;
 }
-a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 0px 8px;
+nav-link {
+  min-width: 60%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2%;
+  div {
+    display: flex;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0px 8px;
+  }
 }
 </style>
