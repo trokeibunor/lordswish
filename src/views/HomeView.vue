@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="wrapper">
     <section id="hero">
       <p id="hi">Hi there! I'm</p>
       <h2 id="name">Lordswish</h2>
@@ -112,6 +112,66 @@
           </div>
         </div>
       </div>
+      <h4 id="case">UI projects</h4>
+      <!-- project section -->
+      <div class="card-grid">
+        <div class="project-card">
+          <img
+            src="https://picsum.photos/200/400"
+            class="card-img"
+            alt=""
+            srcset=""
+          />
+          <div class="card-desc">
+            <h2>Medical Landing Page</h2>
+            <a href="#">UI, Motion design, Animation</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img
+            src="https://picsum.photos/200/400"
+            class="card-img"
+            alt=""
+            srcset=""
+          />
+          <div class="card-desc">
+            <h2>Medical Landing Page</h2>
+            <a href="#">UI, Motion design, Animation</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img
+            src="https://picsum.photos/200/400"
+            class="card-img"
+            alt=""
+            srcset=""
+          />
+          <div class="card-desc">
+            <h2>Medical Landing Page</h2>
+            <a href="#">UI, Motion design, Animation</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img
+            src="https://picsum.photos/200/400"
+            class="card-img"
+            alt=""
+            srcset=""
+          />
+          <div class="card-desc">
+            <h2>Medical Landing Page</h2>
+            <a href="#">UI, Motion design, Animation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact section -->
+    <section id="contact">
+      <h4 id="case">Contact Me</h4>
+      <div class="form-grider">
+        <img src="../assets/images/working_girl.svg" alt="" srcset="" />
+        <form id="contact-form"></form>
+      </div>
     </section>
   </div>
 </template>
@@ -123,6 +183,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#wrapper {
+  max-width: 100vw;
+}
 #hero {
   display: flex;
   flex-direction: column;
@@ -197,11 +260,20 @@ export default {
     }
   }
 }
+// reuseables
+#case {
+  margin: 32px 0px;
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+// End of Reuseables
 #featuredworks {
   width: 60%;
-  margin: 4rem auto 2rem auto;
+  margin: 4rem auto 4rem auto;
   #featured {
-    font-size: 30px;
+    font-size: 24px;
     line-height: 130%;
     /* identical to box height, or 39px */
 
@@ -212,13 +284,6 @@ export default {
     hr {
       color: #fff;
     }
-  }
-  #case {
-    margin: 32px 0px;
-    text-decoration: underline;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 130%;
   }
 }
 .card-grid {
@@ -235,7 +300,7 @@ export default {
     .card-img {
       width: 100%;
       object-fit: cover;
-      height: 305px;
+      height: 250px;
       border-radius: 20px 20px 0px 0px;
     }
     .card-desc {
@@ -250,24 +315,82 @@ export default {
       h2 {
         margin: 8px 0px;
         font-weight: 700;
-        font-size: 30px;
+        font-size: 20px;
         line-height: 130%;
         color: #ffffff;
       }
       a {
         margin: 2px 0px;
-        font-weight: 500;
-        font-size: 17px;
+        font-size: 16px;
         line-height: 143.2%;
         color: #c961de;
+        text-decoration: none;
       }
       p {
-        margin: 8px 0px;
-        font-weight: 500;
-        font-size: 17px;
+        margin: 8px 0px 16px;
+        font-size: 16px;
         line-height: 143.2%;
         color: #c4c4c4;
       }
+    }
+  }
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    .card-img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px 20px 0px 0px;
+      height: 400px;
+    }
+    .card-desc {
+      h2 {
+        margin: 8px 0px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 130%;
+        color: #ffffff;
+      }
+      a {
+        margin: 2px 0px;
+        font-size: 16px;
+        line-height: 143.2%;
+        color: #c961de;
+        text-decoration: none;
+      }
+    }
+  }
+}
+#contact {
+  text-align: center;
+  width: 60%;
+  margin: 4rem auto 4rem auto;
+  .form-grider {
+    display: grid;
+    grid-template-areas:
+      "svg nothing"
+      "form form";
+    img {
+      display: grid;
+      grid-area: "img";
+      width: auto;
+      height: 15rem;
+    }
+    #contact-form {
+      display: grid;
+      grid-area: "form";
+      background-color: rgba(47, 47, 138, 0.6);
+      border: 1px solid;
+      border-image-source: linear-gradient(
+        117.73deg,
+        #ffffff 6.04%,
+        #000000 99.35%
+      );
+      backdrop-filter: blur(20px);
+      /* Note: backdrop-filter has minimal browser support */
+      border-radius: 30px;
     }
   }
 }

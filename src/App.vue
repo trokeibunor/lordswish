@@ -42,6 +42,7 @@ body {
 #app {
   min-width: 100vw;
   min-height: 100vh;
+  height: 100%;
 }
 #app::before {
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.2);
