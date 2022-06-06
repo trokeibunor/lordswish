@@ -178,7 +178,7 @@
         <div id="contact-form">
           <div class="form-desc">
             <h3>Get in Touch</h3>
-            <p>
+            <p id="approach">
               I’m very approachable and would love to speak to you. Feel free to
               call, send me an email . Follow me in social media or simply
               complete the enquiry form.
@@ -201,13 +201,30 @@
               v-model="form.message"
               placeholder="Your message"
               cols="30"
-              rows="10"
+              rows="8"
             ></textarea>
             <button id="submit" @click="submit">Send Message</button>
           </form>
         </div>
       </div>
     </section>
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-menu">
+        <div class="menu-item">
+          <font-awesome-icon icon="home" />
+        </div>
+        <div class="menu-item">
+          <font-awesome-icon icon="user" />
+        </div>
+        <div class="menu-item">
+          <font-awesome-icon icon="bag-shopping" />
+        </div>
+        <div class="menu-item">
+          <font-awesome-icon icon="phone" />
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -425,8 +442,8 @@ export default {
       height: 40rem;
       position: absolute;
       z-index: 10;
-      right: 80%;
-      bottom: 60%;
+      right: 75%;
+      bottom: 57%;
     }
     #contact-form {
       display: grid;
@@ -504,12 +521,12 @@ export default {
       line-height: 140%;
       margin: 8px 0px;
     }
-    p {
-      margin: 8px 0px 48px 0px;
+    p#approach {
+      margin: 48px 0px 48px 0px;
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;
-      width: 80%;
+      width: 70%;
     }
     a {
       margin: 8px 0px;
@@ -527,5 +544,10 @@ export default {
       margin-bottom: 48px;
     }
   }
+}
+footer {
+  width: 100vw;
+  height: 400px;
+  background: rgba(28, 28, 101, 1);
 }
 </style>

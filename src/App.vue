@@ -42,7 +42,8 @@ body {
 #app {
   min-width: 100vw;
   min-height: 100vh;
-  height: 100%;
+  max-height: 100%;
+  height: fit-content;
 }
 #app::before {
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.2);
@@ -52,6 +53,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-x: none;
 }
 nav {
   width: 100%;
