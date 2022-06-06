@@ -192,6 +192,19 @@
               Kinglordswish@gmail.com</a
             >
           </div>
+          <form id="form">
+            <h3>Send Me a Message</h3>
+            <input type="text" v-model="form.name" placeholder="Name" />
+            <input type="email" v-model="form.email" placeholder="Email" />
+            <input type="text" v-model="form.subject" placeholder="Subject" />
+            <textarea
+              v-model="form.message"
+              placeholder="Your message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button id="submit" @click="submit">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
@@ -201,6 +214,16 @@
 <script>
 export default {
   name: "Home-view ",
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+    };
+  },
 };
 </script>
 
@@ -419,6 +442,50 @@ export default {
       backdrop-filter: blur(20px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 30px;
+      #form {
+        display: flex;
+        flex-direction: column;
+        input[type="text"],
+        input[type="email"] {
+          height: auto;
+          background: rgba(255, 255, 255, 0.3);
+          box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          color: #fff;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 143.2%;
+          padding: 10px 20px;
+          margin: 8px 0px;
+        }
+        textarea {
+          background: rgba(255, 255, 255, 0.3);
+          box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
+          border-radius: 10px;
+          outline: none;
+          border: none;
+          padding: 10px 20px;
+          margin: 8px 0px;
+        }
+        #submit {
+          width: fit-content;
+          height: fit-content;
+          padding: 8px 16px;
+          border: none;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 143.2%;
+          /* or 21px */
+
+          /* black */
+
+          color: #252525;
+        }
+      }
     }
     h3 {
       font-weight: 700;
