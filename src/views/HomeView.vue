@@ -217,10 +217,10 @@ export default {
   data() {
     return {
       form: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        name: "Name",
+        email: "Email",
+        subject: "Subject",
+        message: "Your Message",
       },
     };
   },
@@ -426,7 +426,7 @@ export default {
       position: absolute;
       z-index: 10;
       right: 80%;
-      bottom: 35%;
+      bottom: 60%;
     }
     #contact-form {
       display: grid;
@@ -468,8 +468,14 @@ export default {
           border: none;
           padding: 10px 20px;
           margin: 8px 0px;
+          color: #fff;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
         }
         #submit {
+          margin: 8px 0px;
           width: fit-content;
           height: fit-content;
           padding: 8px 16px;
@@ -477,13 +483,18 @@ export default {
           font-family: "Poppins";
           font-style: normal;
           font-weight: 400;
-          font-size: 15px;
-          line-height: 143.2%;
+          font-size: 14px;
+          line-height: 130%;
           /* or 21px */
-
           /* black */
-
+          background: #ffffff;
+          box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
+          border-radius: 10px;
           color: #252525;
+          cursor: pointer;
+        }
+        #submit:hover {
+          background: rgba(255, 255, 255, 0.692);
         }
       }
     }
