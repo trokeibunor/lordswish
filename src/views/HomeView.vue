@@ -167,10 +167,32 @@
     </section>
     <!-- contact section -->
     <section id="contact">
-      <h4 id="case">Contact Me</h4>
+      <h4 id="case" class="positioner">Contact Me</h4>
       <div class="form-grider">
-        <img src="../assets/images/working_girl.svg" alt="" srcset="" />
-        <form id="contact-form"></form>
+        <img
+          id="illustration"
+          src="../assets/images/working_girl.svg"
+          alt=""
+          srcset=""
+        />
+        <div id="contact-form">
+          <div class="form-desc">
+            <h3>Get in Touch</h3>
+            <p>
+              I’m very approachable and would love to speak to you. Feel free to
+              call, send me an email . Follow me in social media or simply
+              complete the enquiry form.
+            </p>
+            <!-- mobile and mail -->
+            <a href="tel:+2347046647498"
+              ><img src="../assets/images/Phone.svg" alt="" /> +2347046647498</a
+            >
+            <a id="mail" href="mailto:kinglordswish@gmail.com"
+              ><img src="../assets/images/Email.svg" alt="" srcset="" />
+              Kinglordswish@gmail.com</a
+            >
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -367,20 +389,26 @@ export default {
   text-align: center;
   width: 60%;
   margin: 4rem auto 4rem auto;
+  .positioner {
+    margin-bottom: 15rem;
+  }
   .form-grider {
-    display: grid;
-    grid-template-areas:
-      "svg nothing"
-      "form form";
-    img {
-      display: grid;
-      grid-area: "img";
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    img#illustration {
       width: auto;
-      height: 15rem;
+      height: 40rem;
+      position: absolute;
+      z-index: 10;
+      right: 80%;
+      bottom: 35%;
     }
     #contact-form {
       display: grid;
-      grid-area: "form";
+      grid-template-columns: 1fr 1fr;
+      padding: 32px;
       background-color: rgba(47, 47, 138, 0.6);
       border: 1px solid;
       border-image-source: linear-gradient(
@@ -391,6 +419,34 @@ export default {
       backdrop-filter: blur(20px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 30px;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      margin: 8px 0px;
+    }
+    p {
+      margin: 8px 0px 48px 0px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      width: 80%;
+    }
+    a {
+      margin: 8px 0px;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      color: #fff;
+      img {
+        max-width: 25px;
+        max-height: 25px;
+        margin-right: 8px;
+      }
+    }
+    a#mail {
+      margin-bottom: 48px;
     }
   }
 }
