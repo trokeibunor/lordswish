@@ -242,7 +242,7 @@
           <a href="#"><img src="../assets/images/Facebook.svg" alt="" /></a>
         </li>
         <li>
-          <a href="#"><img src="../assets/images/Behance Icon.svg" alt="" /></a>
+          <a href="#"><img src="../assets/images/BehanceIcon.svg" alt="" /></a>
         </li>
         <li>
           <a href="#"><img src="../assets/images/medium.svg" alt="" /></a>
