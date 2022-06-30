@@ -612,6 +612,35 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
     }
   }
 }
+@media #{$media-mobile} {
+  #contact {
+    width: 90%;
+    .positioner {
+      margin-bottom: 2rem;
+    }
+    .form-grider {
+      img#illustration {
+        height: 20rem;
+        right: 30%;
+        bottom: 75%;
+      }
+      #contact-form {
+        margin-top: 10rem;
+        grid-template-columns: none;
+        grid-template-rows: auto;
+        padding: 8px;
+        h3 {
+          width: 90%;
+          margin: 16px auto;
+        }
+        p#approach {
+          margin: 24px auto;
+          width: 90%;
+        }
+      }
+    }
+  }
+}
 footer {
   width: 100vw;
   height: 45vh;
