@@ -658,6 +658,9 @@ footer {
       color: #fff;
       margin: 32px 16px;
       padding-top: 40px;
+      svg {
+        margin-right: 4px;
+      }
     }
   }
   .social-link {
@@ -694,6 +697,30 @@ footer {
         text-decoration: none;
         color: #ffffffb2;
       }
+    }
+  }
+}
+@media #{$media-mobile} {
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px;
+    height: auto;
+    .footer-menu {
+      flex-direction: column;
+      gap: 8px;
+      .menu-item {
+        display: flex;
+        margin: 8px 4px;
+        padding: 0px;
+        text-align: left;
+        align-items: baseline;
+      }
+    }
+    .social-link {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
     }
   }
 }
