@@ -14,6 +14,8 @@
         <a href="#">Portfolio</a>
         <a href="#">Contact me</a>
       </div>
+      <!-- for mobile menu -->
+      <img src="./assets/images/mobileMenu.svg" id="sideMenu" alt="" />
     </nav-link>
   </nav>
   <RouterView />
@@ -33,6 +35,11 @@ export default {
 <style lang="scss">
 @import "@/assets/base.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+$media-desktop-strict: "only screen and (min-width: 768px)";
 body {
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;
@@ -60,6 +67,7 @@ nav {
   display: flex;
   flex-direction: row;
 }
+
 nav-link {
   min-width: 60%;
   margin: 0px auto;
@@ -75,6 +83,29 @@ nav-link {
     text-decoration: none;
     font-size: 14px;
     margin: 0px 16px;
+  }
+  #sideMenu {
+    display: none;
+  }
+}
+@media #{$media-mobile} {
+  nav img {
+    max-width: 20vw;
+    max-height: 20vh;
+    display: relative;
+    z-index: -10;
+  }
+  nav-link {
+    width: 75%;
+    padding-top: 5%;
+  }
+  nav-link div {
+    display: none;
+  }
+  nav-link #sideMenu {
+    display: block;
+    width: 24px;
+    height: 24px;
   }
 }
 </style>

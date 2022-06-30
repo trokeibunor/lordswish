@@ -275,6 +275,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+$media-desktop-strict: "only screen and (min-width: 768px)";
 #wrapper {
   max-width: 100vw;
 }
@@ -352,6 +357,27 @@ export default {
     }
   }
 }
+@media #{$media-mobile} {
+  #hero {
+    margin-top: 5vh;
+    width: 80%;
+    gap: 20px;
+    #hi {
+      line-height: 120%;
+    }
+    #name {
+      font-size: 42px;
+    }
+    #desc {
+      font-weight: 400;
+    }
+    .cta {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
 // reuseables
 #case {
   margin: 32px 0px;
@@ -376,6 +402,11 @@ export default {
     hr {
       color: #fff;
     }
+  }
+}
+@media #{$media-mobile} {
+  #featuredworks {
+    width: 90%;
   }
 }
 .card-grid {
@@ -453,6 +484,12 @@ export default {
         text-decoration: none;
       }
     }
+  }
+}
+@media #{$media-mobile} {
+  .card-grid {
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
   }
 }
 #contact {
