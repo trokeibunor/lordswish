@@ -15,9 +15,29 @@
         <a href="#">Contact me</a>
       </div>
       <!-- for mobile menu -->
-      <img src="./assets/images/mobileMenu.svg" id="sideMenu" alt="" />
+      <img
+        src="./assets/images/mobileMenu.svg"
+        id="sideMenu"
+        alt=""
+        @click="isNotDropped"
+        v-show="!dropped"
+      />
+      <img
+        src="./assets/images/menu-dropped.svg"
+        id="sideMenu"
+        v-show="dropped"
+        @click="isDropped"
+        alt=""
+      />
     </nav-link>
   </nav>
+  <!-- Mobile drop down -->
+  <div class="dropdown" v-if="dropped">
+    <a href="#">Home</a>
+    <a href="#" class="active">About Me</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact Me</a>
+  </div>
   <RouterView />
 </template>
 
@@ -25,9 +45,24 @@
 import { RouterLink, RouterView } from "vue-router";
 
 export default {
+  data() {
+    return {
+      dropped: true,
+    };
+  },
   components: {
     RouterLink,
     RouterView,
+  },
+  methods: {
+    isDropped() {
+      alert("dropped");
+      // this.dropped = false;
+    },
+    isNotDropped() {
+      alert("Not Dropped");
+      // this.dropped = true;
+    },
   },
 };
 </script>
@@ -88,7 +123,16 @@ nav-link {
     display: none;
   }
 }
+.dropdown {
+  display: none;
+}
 @media #{$media-mobile} {
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #0f103f;
+    z-index: 500;
+  }
   nav img {
     max-width: 20vw;
     max-height: 20vh;
@@ -106,6 +150,25 @@ nav-link {
     display: block;
     width: 24px;
     height: 24px;
+  }
+  .dropdown {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: none;
+      color: #0f103f;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 8px;
+      padding: 8px;
+    }
+    .active {
+      color: #fff !important;
+      background-color: #0f103f !important;
+    }
   }
 }
 </style>
