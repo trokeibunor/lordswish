@@ -7,7 +7,7 @@
       srcset=""
     />
     <nav-link>
-      <p id="name">LORD'SWISH.</p>
+      <p id="name" v-on:click="isdropped">LORD'SWISH.</p>
       <div>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -15,20 +15,12 @@
         <a href="#">Contact me</a>
       </div>
       <!-- for mobile menu -->
-      <img
-        src="./assets/images/mobileMenu.svg"
-        id="sideMenu"
-        alt=""
-        @click="isNotDropped"
-        v-show="!dropped"
-      />
-      <img
-        src="./assets/images/menu-dropped.svg"
-        id="sideMenu"
-        v-show="dropped"
-        @click="isDropped"
-        alt=""
-      />
+      <div id="sideMenu" v-if="!dropped" v-on:click="isNotDropped">
+        <img src="./assets/images/mobileMenu.svg" alt="" />
+      </div>
+      <div id="sideMenu" v-if="dropped" v-on:click="isdropped">
+        <img src="./assets/images/menu-dropped.svg" alt="" />
+      </div>
     </nav-link>
   </nav>
   <!-- Mobile drop down -->
@@ -55,13 +47,11 @@ export default {
     RouterView,
   },
   methods: {
-    isDropped() {
-      alert("dropped");
-      // this.dropped = false;
+    isdropped: function () {
+      this.dropped = false;
     },
-    isNotDropped() {
-      alert("Not Dropped");
-      // this.dropped = true;
+    isNotDropped: function () {
+      this.dropped = true;
     },
   },
 };
