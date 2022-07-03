@@ -576,6 +576,9 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
     .positioner {
       margin-bottom: 2rem;
     }
+    p#approach {
+      width: 50%;
+    }
     .form-grider {
       img#illustration {
         height: 20rem;
