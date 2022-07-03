@@ -9,7 +9,7 @@
         <button id="hire">Hire me</button>
       </div>
     </section>
-    <section id="featuredworks">
+    <section id="featuredworks portfolio">
       <h3 id="featured">Featured Works</h3>
       <hr />
       <h4 id="case">Case Study</h4>
@@ -594,6 +594,16 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
         p#approach {
           margin: 24px auto;
           width: 90%;
+        }
+      }
+      #form {
+        input[type="text"],
+        input[type="email"] {
+          margin: 8px 0px;
+          padding: 0px;
+        }
+        textarea {
+          padding: 0px;
         }
       }
     }

@@ -11,8 +11,8 @@
       <div>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact me</a>
+        <a href="/#portfolio">Portfolio</a>
+        <a href="#contact">Contact me</a>
       </div>
       <!-- for mobile menu -->
       <div id="sideMenu" v-if="!dropped" v-on:click="isNotDropped">
