@@ -9,7 +9,7 @@
         <button id="hire">Hire me</button>
       </div>
     </section>
-    <section id="featuredworks portfolio">
+    <section id="featuredworks">
       <h3 id="featured">Featured Works</h3>
       <hr />
       <h4 id="case">Case Study</h4>
