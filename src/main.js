@@ -12,6 +12,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import './index.css'
 
 library.add([faHome, faUser, faBagShopping, faPhone]);
 

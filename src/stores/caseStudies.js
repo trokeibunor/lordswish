@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import { db } from "@/db"
 import {
+    doc,
+    getDoc,
     getDocs,
     collection,
   } from "firebase/firestore";
@@ -8,7 +10,8 @@ import {
 export const useCaseStudiesStore = defineStore({
   id: 'caseStudies',
   state: () => ({
-    projectInfo : []
+    projectInfo : [],
+    projectDetail: []
   }),
   actions: {
     // Get articles
@@ -24,5 +27,17 @@ export const useCaseStudiesStore = defineStore({
         });
       },
     //   get single article.
+    async getSingleDoc(title){
+      const docRef = doc(db,"projects",title);
+      const docSnap = await getDoc(docRef);
+      this.projectDetail = [];
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        this.projectDetail.push(docSnap.data())
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    }
   }
 })
