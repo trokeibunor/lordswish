@@ -16,7 +16,9 @@
           I have worked worked with different companies and worked on different
           projects to deliver value to both users and business owners.
         </p>
-        <a href="./assets/resumeugo.pdf" target="blank">View My Resume</a>
+        <a href="./assets/resumeugo.pdf" target="blank" download="newfilename"
+          >View My Resume</a
+        >
       </div>
     </div>
   </div>

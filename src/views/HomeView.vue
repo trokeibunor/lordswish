@@ -15,7 +15,23 @@
       <h4 id="case">Case Study</h4>
       <!-- card section -->
       <div class="card-grid">
-        <div class="cs-card">
+        <router-link class="cs-card" :to="{name:'caseStudy',params: {id: item?.title}}"  v-for="item in this.projectInfo" :key="item?.title">
+          <img
+            :src="item?.link"
+            class="card-img"
+            alt=""
+            srcset=""
+          />
+          <div class="card-desc">
+            <h2>{{item?.title}}</h2>
+            <!-- <router-link :to="{name:'case',params: {id: item?.title}}">UI/UX Design, UX Research, Motion Design</router-link> -->
+            <p class="note">
+              I am a creative UI/UX designer, I help individuals and companies
+              to design intuitive and usable digital products.
+            </p>
+          </div>
+        </router-link>
+        <!-- <div class="cs-card">
           <img
             src="https://picsum.photos/200/300"
             class="card-img"
@@ -94,23 +110,7 @@
               to design intuitive and usable digital products.
             </p>
           </div>
-        </div>
-        <div class="cs-card">
-          <img
-            src="https://picsum.photos/200/300"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Kofamed</h2>
-            <a href="#">UI/UX Design, UX Research, Motion Design</a>
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
-          </div>
-        </div>
+        </div> -->
       </div>
       <h4 id="case">UI projects</h4>
       <!-- project section -->
@@ -214,6 +214,8 @@
 
 <script>
 import footerComponent from "../components/footerComponent.vue";
+import { mapActions, mapState } from "pinia";
+import { useCaseStudiesStore } from "../stores/caseStudies";
 export default {
   name: "Home-view ",
   data() {
@@ -225,6 +227,15 @@ export default {
         message: "Your Message",
       },
     };
+  },
+  methods: {
+    ...mapActions(useCaseStudiesStore, ['getArticles'])
+  },
+  computed: {
+    ...mapState(useCaseStudiesStore, ['projectInfo'])
+  },
+  mounted(){
+    this.getArticles()
   },
   components: {
     footerComponent,
@@ -375,6 +386,7 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
   grid-gap: 48px;
   margin: 16px 0px;
   .cs-card {
+    text-decoration: none;
     display: flex;
     width: 100%;
     flex-direction: column;

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 <template>
   <!-- Footer Section -->
   <footer>
@@ -48,7 +47,6 @@
     </ul>
   </footer>
 </template>
-
 <script>
 export default {
   name: "footerComponent",
