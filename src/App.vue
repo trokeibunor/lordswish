@@ -24,9 +24,9 @@
     </nav-link>
   </nav>
   <!-- Mobile drop down -->
-  <div class="dropdown" v-if="dropped">
-    <a href="#">Home</a>
-    <a href="#" class="active">About Me</a>
+  <div class="dropdown shadow-md" v-if="dropped">
+    <a href="/">Home</a>
+    <a href="/about" class="active">About Me</a>
     <a href="#">Portfolio</a>
     <a href="#">Contact Me</a>
   </div>
@@ -39,7 +39,7 @@ import { RouterLink, RouterView } from "vue-router";
 export default {
   data() {
     return {
-      dropped: true,
+      dropped: false,
     };
   },
   components: {
@@ -142,6 +142,8 @@ nav-link {
     height: 24px;
   }
   .dropdown {
+    position: fixed;
+    z-index: 500;
     width: 100%;
     height: auto;
     background: #fff;

@@ -5,27 +5,27 @@
     </picture>
     <div class="desc_tags flex flex-col gap-2 lg:grid lg:grid-cols-3">
       <div class="item my-2">
-        <h4 class="font-bold text-lg">Project Title</h4>
+        <h4 class="font-bold text-md">Project Title</h4>
         <p>{{item?.title}}</p>
       </div>
       <div class="item my-2">
-        <h4 class="font-bold text-lg">My Role</h4>
+        <h4 class="font-bold text-md">My Role</h4>
         <p>{{item?.role}}</p>
       </div>
       <div class="item my-2">
-        <h4 class="font-bold text-lg">Team Members</h4>
+        <h4 class="font-bold text-md">Team Members</h4>
         <p>{{item?.members}}</p>
       </div>
       <div class="item my-2">
-        <h4 class="font-bold text-lg">Project Scope</h4>
+        <h4 class="font-bold text-md">Project Scope</h4>
         <p>{{item?.scope}}</p>
       </div>
       <div class="item my-2">
-        <h4 class="font-bold text-lg">Duration</h4>
+        <h4 class="font-bold text-md">Duration</h4>
         <p>{{item?.duration}}</p>
       </div>
       <div class="item my-2">
-        <h4 class="font-bold text-lg">Tools</h4>
+        <h4 class="font-bold text-md">Tools</h4>
         <p>{{item?.tools}}</p>
       </div>
     </div>
@@ -46,16 +46,6 @@ export default {
   name: "caseStudy",
   data() {
     return {
-      projectInfo: {
-        projectTitle: "",
-        myRole: "",
-        teamMembers: "",
-        projectScope: "",
-        duration: "",
-        tools: "",
-      },
-      projectOverview: "",
-      project: ""
     };
   },
   components: {
@@ -80,7 +70,7 @@ export default {
 }
 @media (max-width: 768px) {
   .pro-img{
-    height: 35vh;
+    height: 30vh;
   }
 }
 .content > p{
