@@ -18,7 +18,8 @@
     "firebase": "^9.9.1",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.14",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",

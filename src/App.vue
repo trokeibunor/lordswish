@@ -25,10 +25,10 @@
   </nav>
   <!-- Mobile drop down -->
   <div class="dropdown shadow-md" v-if="dropped">
-    <a href="/">Home</a>
-    <a href="/about" class="active">About Me</a>
-    <a href="#">Portfolio</a>
-    <a href="#">Contact Me</a>
+    <div @click="linker('/', 'home')" :class="{active: currentPage == 'home' }">Home</div>
+    <div @click="linker('/about', 'about')" :class="{active: currentPage == 'about' }">About Me</div>
+    <div @click="linker('/#portfolio', 'portfolio' , 'portfolio')" :class="{active: currentPage == 'portfolio' }">Portfolio</div>
+    <div @click="linker('/#contact', 'contact', 'contact')" :class="{active: currentPage == 'contact' }">Contact Me</div>
   </div>
   <RouterView />
 </template>
@@ -40,6 +40,7 @@ export default {
   data() {
     return {
       dropped: false,
+      currentPage: 'home'
     };
   },
   components: {
@@ -53,6 +54,11 @@ export default {
     isNotDropped: function () {
       this.dropped = true;
     },
+    linker(link, page){
+      this.currentPage = page;
+      this.$router.push(link);
+      this.dropped = false;
+    }
   },
 };
 </script>
@@ -168,7 +174,7 @@ nav-link {
     background: #fff;
     display: flex;
     flex-direction: column;
-    a {
+    div {
       text-decoration: none;
       color: #0f103f;
       font-size: 18px;

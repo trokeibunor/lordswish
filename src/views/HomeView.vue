@@ -9,7 +9,7 @@
         <button id="hire">Hire me</button>
       </div>
     </section>
-    <section id="featuredworks">
+    <section id="featuredworks" ref="portfolio">
       <h3 id="featured">Featured Works</h3>
       <hr />
       <h4 id="case">Case Study</h4>
@@ -86,7 +86,7 @@
       </div>
     </section>
     <!-- contact section -->
-    <section id="contact">
+    <section id="contact" ref="contact">
       <h4 id="case" class="positioner">Contact Me</h4>
       <div class="form-grider">
         <img
