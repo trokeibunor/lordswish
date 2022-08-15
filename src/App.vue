@@ -70,6 +70,19 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: hsla(239, 62%, 15%, 1);
   color: #fff;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 #app {
   min-width: 100vw;
@@ -92,7 +105,12 @@ nav {
   display: flex;
   flex-direction: row;
 }
-
+nav {
+  img {
+    position: absolute;
+    z-index: 10;
+  }
+}
 nav-link {
   min-width: 60%;
   margin: 0px auto;
@@ -124,6 +142,7 @@ nav-link {
     z-index: 500;
   }
   nav img {
+    position: inherit;
     max-width: 20vw;
     max-height: 20vh;
     display: relative;
@@ -131,7 +150,7 @@ nav-link {
   }
   nav-link {
     width: 75%;
-    padding-top: 5%;
+    padding-top: 8%;
   }
   nav-link div {
     display: none;

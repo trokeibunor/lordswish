@@ -63,20 +63,26 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+picture{
+  background-color: aliceblue;
+  /* height: auto; */
+  /* max-height: 600px; */
+}
 .pro-img{
-  height: 75vh;
-  max-height: 600px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   .pro-img{
     height: 30vh;
   }
 }
-.content > p{
-  padding: 2rem 0;
+.content >>> p{
+  margin: 1rem 0;
 }
-.content > img{
+.content >>> img{
   border-radius: 4px;
 }
 </style>

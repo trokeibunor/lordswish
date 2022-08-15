@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div id="wrapper">
-      <div class="content">
+      <div class="contentz">
         <p id="head">About Me</p>
         <p>
           Experienced product designer with over 2-3 years of experience
@@ -36,21 +36,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+$media-desktop-strict: "only screen and (min-width: 768px)";
 .container {
   width: 100vw;
-  height: 90vh;
   #wrapper {
     background: linear-gradient(144.11deg, #c961de 13.74%, #2954a3 90.91%);
-    border-radius: 20rem;
-    text-align: center;
-    position: relative;
-    z-index: 50;
-    width: 35rem;
-    height: 35rem;
-    margin: 0px auto;
-    left: 0%;
-    bottom: 5rem;
-    .content {
+    width: 100vw;
+    height: fit-content;
+    margin-top: 1rem;
+    .contentz {
+      display: block;
+      width: 50%;
+      margin: auto;
+      padding: 5rem 0;
       #head {
         text-align: center;
         font-style: normal;
@@ -61,9 +63,6 @@ export default {
         text-decoration-line: underline;
         color: #ffffff;
       }
-      padding-top: 15%;
-      margin: 0% auto;
-      width: 80%;
       p {
         font-size: 14px;
         margin: 16px 0px;
@@ -80,6 +79,17 @@ export default {
         line-height: 143.2%;
         color: #252525;
         padding: 8px 16px;
+      }
+    }
+  }
+}
+@media #{$media-mobile}{
+  .container{
+    #wrapper{
+      margin-top: 0;
+      .contentz{
+        padding: 4rem 0 7rem 0;
+        width: 90%;
       }
     }
   }

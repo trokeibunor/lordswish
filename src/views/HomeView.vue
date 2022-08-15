@@ -31,86 +31,6 @@
             </p>
           </div>
         </router-link>
-        <!-- <div class="cs-card">
-          <img
-            src="https://picsum.photos/200/300"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Kofamed</h2>
-            <a href="#">UI/UX Design, UX Research, Motion Design</a>
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
-          </div>
-        </div>
-        <div class="cs-card">
-          <img
-            src="https://picsum.photos/200/300"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Kofamed</h2>
-            <a href="#">UI/UX Design, UX Research, Motion Design</a>
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
-          </div>
-        </div>
-        <div class="cs-card">
-          <img
-            src="https://picsum.photos/200/300"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Kofamed</h2>
-            <a href="#">UI/UX Design, UX Research, Motion Design</a>
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
-          </div>
-        </div>
-        <div class="cs-card">
-          <img
-            src="https://picsum.photos/200/300"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Kofamed</h2>
-            <a href="#">UI/UX Design, UX Research, Motion Design</a>
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
-          </div>
-        </div>
-        <div class="cs-card">
-          <img
-            src="https://picsum.photos/200/300"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Kofamed</h2>
-            <a href="#">UI/UX Design, UX Research, Motion Design</a>
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
-          </div>
-        </div> -->
       </div>
       <h4 id="case">UI projects</h4>
       <!-- project section -->
@@ -250,6 +170,7 @@ $media-mobile: "only screen and (max-width : 600px)";
 $media-mobile-sm: "only screen and (max-width : 480px)";
 $media-desktop-strict: "only screen and (min-width: 768px)";
 #wrapper {
+  margin-top: 8rem;
   max-width: 100vw;
 }
 #hero {
