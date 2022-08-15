@@ -9,7 +9,7 @@
         <button id="hire">Hire me</button>
       </div>
     </section>
-    <section id="featuredworks" ref="portfolio">
+    <section id="portfoliio">
       <h3 id="featured">Featured Works</h3>
       <hr />
       <h4 id="case">Case Study</h4>
@@ -277,7 +277,7 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
   line-height: 130%;
 }
 // End of Reuseables
-#featuredworks {
+#portfoliio {
   width: 60%;
   margin: 4rem auto 4rem auto;
   #featured {
@@ -295,7 +295,7 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
   }
 }
 @media #{$media-mobile} {
-  #featuredworks {
+  #portfoliio {
     width: 90%;
   }
 }

@@ -11,7 +11,7 @@
       <div>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <a href="/#portfolio">Portfolio</a>
+        <!-- <a href="/#portfolio">Portfolio</a> -->
         <a href="#contact">Contact me</a>
       </div>
       <!-- for mobile menu -->
@@ -27,7 +27,7 @@
   <div class="dropdown shadow-md" v-if="dropped">
     <div @click="linker('/', 'home')" :class="{active: currentPage == 'home' }">Home</div>
     <div @click="linker('/about', 'about')" :class="{active: currentPage == 'about' }">About Me</div>
-    <div @click="linker('/#portfolio', 'portfolio' , 'portfolio')" :class="{active: currentPage == 'portfolio' }">Portfolio</div>
+    <!-- <div @click="linker('/#portfolio', 'portfolio' , 'portfolio')" :class="{active: currentPage == 'portfolio' }">Portfolio</div> -->
     <div @click="linker('/#contact', 'contact', 'contact')" :class="{active: currentPage == 'contact' }">Contact Me</div>
   </div>
   <RouterView />
