@@ -110,6 +110,12 @@ nav {
   width: 100%;
   display: flex;
   flex-direction: row;
+  background-color: hsla(239, 62%, 15%, 1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  padding-bottom: 16px;
 }
 nav {
   img {

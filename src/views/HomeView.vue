@@ -25,10 +25,8 @@
           <div class="card-desc">
             <h2>{{item?.title}}</h2>
             <!-- <router-link :to="{name:'case',params: {id: item?.title}}">UI/UX Design, UX Research, Motion Design</router-link> -->
-            <p class="note">
-              I am a creative UI/UX designer, I help individuals and companies
-              to design intuitive and usable digital products.
-            </p>
+            <p class="note">Role : {{item?.role}}</p>
+            <p class="note">Scope : {{item?.scope}}</p>
           </div>
         </router-link>
       </div>
@@ -176,6 +174,12 @@ export default {
           // usetoast to show email sent
           const toast = useToast()
           toast.info("Email has been sent")
+          // Push form data to database
+          // clear form
+          this.form.name = "";
+          this.form.subject = "";
+          this.form.message = "";
+          this.form.email = ""
         },(error)=>{
           // use toast to show that email has not been sent
           const toast = useToast()
@@ -355,16 +359,19 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 0px 0px 0px 16px;
+      padding: 0px 0px 16px 16px;
       gap: 16px;
       background: #0f2b5f;
       border-radius: 0px 0px 20px 20px;
       h2 {
         margin: 8px 0px;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 130%;
         color: #ffffff;
+        max-height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       a {
         margin: 2px 0px;
@@ -373,10 +380,10 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
         color: #c961de;
         text-decoration: none;
       }
-      p {
-        margin: 8px 0px 16px;
+      .note {
+        margin: 2px 0px;
         font-size: 16px;
-        line-height: 143.2%;
+        line-height: 100%;
         color: #c4c4c4;
       }
     }

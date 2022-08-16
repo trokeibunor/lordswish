@@ -47,7 +47,7 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
     background: linear-gradient(144.11deg, #c961de 13.74%, #2954a3 90.91%);
     width: 100vw;
     height: fit-content;
-    margin-top: 1rem;
+    // margin-top: 1rem;
     .contentz {
       display: block;
       width: 50%;
