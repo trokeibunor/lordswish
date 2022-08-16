@@ -6,7 +6,7 @@
       <p id="desc">I Design experiences that solve user problems</p>
       <div class="cta">
         <button id="resume">Resume</button>
-        <button id="hire">Hire me</button>
+        <a href="#contact" id="hire">Hire me</a>
       </div>
     </section>
     <section id="portfoliio">

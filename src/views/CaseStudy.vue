@@ -66,13 +66,12 @@ export default {
 <style scoped>
 picture{
   background-color: aliceblue;
-  /* height: auto; */
-  /* max-height: 600px; */
 }
 .pro-img{
   width: 100%;
-  height: auto;
+  height: 75vh;
   object-fit: cover;
+  margin-top: 2.5rem;
 }
 @media (max-width: 768px) {
   .pro-img{

@@ -12,7 +12,7 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <!-- <a href="/#portfolio">Portfolio</a> -->
-        <a href="#contact">Contact me</a>
+        <RouterLink to="/#contact">Contact me</RouterLink>
       </div>
       <!-- for mobile menu -->
       <div id="sideMenu" v-if="!dropped" v-on:click="isNotDropped">
@@ -97,7 +97,7 @@ body::-webkit-scrollbar-thumb {
   height: fit-content;
 }
 #app::before {
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 100% rgba(255, 255, 255, 0.2);
   content: "";
   position: absolute;
   top: 0;
