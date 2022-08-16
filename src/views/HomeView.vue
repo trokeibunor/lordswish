@@ -112,18 +112,19 @@
               Kinglordswish@gmail.com</a
             >
           </div>
-          <form id="form">
+          <form id="form" @submit.prevent="sendMail">
             <h3>Send Me a Message</h3>
-            <input type="text" v-model="form.name" placeholder="Name" />
-            <input type="email" v-model="form.email" placeholder="Email" />
-            <input type="text" v-model="form.subject" placeholder="Subject" />
+            <input type="text" v-model="form.name" name="from_name" placeholder="Name" />
+            <input type="email" v-model="form.email" name="reply_to" placeholder="Email" />
+            <input type="text" v-model="form.subject" name="subject" placeholder="Subject" />
             <textarea
               v-model="form.message"
+              name="message"
               placeholder="Your message"
               cols="30"
               rows="8"
             ></textarea>
-            <button id="submit" @click="submit">Send Message</button>
+            <button id="submit">Send Message</button>
           </form>
         </div>
       </div>
@@ -136,20 +137,52 @@
 import footerComponent from "../components/footerComponent.vue";
 import { mapActions, mapState } from "pinia";
 import { useCaseStudiesStore } from "../stores/caseStudies";
+import {useToast} from 'vue-toastification';
+// import {ref} from 'vue';
+import emailjs from 'emailjs-com';
 export default {
   name: "Home-view ",
   data() {
     return {
+      mailData:{
+        service_ID: "service_hvwtrwj",
+        template_ID: "template_qzibjml",
+        userID: "nHJqKQDdVHCOHA1Y-",
+
+      },
       form: {
-        name: "Name",
-        email: "Email",
-        subject: "Subject",
-        message: "Your Message",
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
       },
     };
   },
   methods: {
-    ...mapActions(useCaseStudiesStore, ['getArticles'])
+    ...mapActions(useCaseStudiesStore, ['getArticles']),
+    sendMail(e){
+      emailjs.sendForm(
+        this.mailData.service_ID,
+        this.mailData.template_ID,
+        e.target,
+        this.mailData.userID,{
+            from_name: this.form.name,
+            subject: this.form.subject,
+            message: this.form.message,
+            reply_to: this.form.email,
+          }
+        )
+        .then(()=>{
+          // usetoast to show email sent
+          const toast = useToast()
+          toast.info("Email has been sent")
+        },(error)=>{
+          // use toast to show that email has not been sent
+          const toast = useToast()
+          toast.error("Email could not be sent please try again later")
+        }
+        )
+    }
   },
   computed: {
     ...mapState(useCaseStudiesStore, ['projectInfo'])
