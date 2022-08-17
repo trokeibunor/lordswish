@@ -16,7 +16,7 @@
           I have worked worked with different companies and worked on different
           projects to deliver value to both users and business owners.
         </p>
-        <a href="./assets/resumeugo.pdf" target="blank" download="newfilename"
+        <a href="https://firebasestorage.googleapis.com/v0/b/lordwish-portfolio.appspot.com/o/resumeugo.pdf?alt=media&token=9a4cd104-ace9-47f8-ac6c-c1a090ce06a5" target="_blank"
           >View My Resume</a
         >
       </div>

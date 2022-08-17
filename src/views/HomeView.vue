@@ -1,11 +1,12 @@
 <template>
+  <custom-particle/>
   <div id="wrapper">
     <section id="hero">
       <p id="hi">Hi there! I'm</p>
       <h2 id="name">Lordswish</h2>
       <p id="desc">I Design experiences that solve user problems</p>
       <div class="cta">
-        <button id="resume">Resume</button>
+        <a href="https://firebasestorage.googleapis.com/v0/b/lordwish-portfolio.appspot.com/o/resumeugo.pdf?alt=media&token=9a4cd104-ace9-47f8-ac6c-c1a090ce06a5" target="_blank" id="resume">Resume</a>
         <a href="#contact" id="hire">Hire me</a>
       </div>
     </section>
@@ -136,6 +137,7 @@ import footerComponent from "../components/footerComponent.vue";
 import { mapActions, mapState } from "pinia";
 import { useCaseStudiesStore } from "../stores/caseStudies";
 import {useToast} from 'vue-toastification';
+import CustomParticle from "../components/Particle.vue"
 // import {ref} from 'vue';
 import emailjs from 'emailjs-com';
 export default {
@@ -186,7 +188,7 @@ export default {
           toast.error("Email could not be sent please try again later")
         }
         )
-    }
+    },
   },
   computed: {
     ...mapState(useCaseStudiesStore, ['projectInfo'])
@@ -196,6 +198,7 @@ export default {
   },
   components: {
     footerComponent,
+    CustomParticle
   },
 };
 </script>

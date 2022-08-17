@@ -18,10 +18,14 @@
     "emailjs-com": "^3.2.0",
     "firebase": "^9.9.1",
     "pinia": "^2.0.13",
+    "tsparticles": "^2.2.2",
+    "tsparticles-engine": "^2.2.2",
+    "tsparticles-slim": "^2.2.2",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14",
     "vue-scrollto": "^2.20.0",
-    "vue-toastification": "^2.0.0-rc.5"
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue3-particles": "^2.2.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",

@@ -17,6 +17,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "vue-toastification/dist/index.css";
 import './index.css'
+import Particles from "vue3-particles";
 
 library.add([faHome, faUser, faBagShopping, faPhone]);
 
@@ -24,7 +25,8 @@ const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(createPinia());
 app.use(router);
-app.use(Toast)
+app.use(Toast);
+app.use(Particles);
 app.use(VueScrollTo)
 // app.use(loader);
 
