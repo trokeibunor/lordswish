@@ -3,7 +3,7 @@
     <img
       src="./assets/images/illustration_top.svg"
       alt=""
-      class="illustration"
+      class="illustration rotating"
       srcset=""
     />
     <nav-link>
@@ -90,6 +90,41 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 20s linear infinite;
+  -moz-animation: rotating 20s linear infinite;
+  -ms-animation: rotating 20s linear infinite;
+  -o-animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
+}
 #app {
   min-width: 100vw;
   min-height: 100vh;
@@ -154,15 +189,17 @@ nav-link {
     z-index: 500;
   }
   nav img {
-    position: inherit;
+    // position: inherit;
     max-width: 20vw;
     max-height: 20vh;
-    display: relative;
     z-index: -10;
   }
   nav-link {
-    width: 75%;
+    width: 80%;
     padding-top: 8%;
+    #name{
+      margin-left: 2rem;
+    }
   }
   nav-link div {
     display: none;
