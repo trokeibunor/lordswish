@@ -195,7 +195,7 @@ nav-link {
     z-index: -10;
   }
   nav-link {
-    width: 80%;
+    width: 90%;
     padding-top: 8%;
     #name{
       margin-left: 2rem;

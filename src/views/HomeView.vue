@@ -113,14 +113,14 @@
           </div>
           <form id="form" @submit.prevent="sendMail">
             <h3>Send Me a Message</h3>
-            <input type="text" v-model="form.name" name="from_name" placeholder="Name" />
-            <input type="email" v-model="form.email" name="reply_to" placeholder="Email" />
-            <input type="text" v-model="form.subject" name="subject" placeholder="Subject" />
+            <input type="text" class="form_input" v-model="form.name" name="from_name" placeholder="Name" />
+            <input type="email" class="form_input" v-model="form.email" name="reply_to" placeholder="Email" />
+            <input type="text" class="form_input" v-model="form.subject" name="subject" placeholder="Subject" />
             <textarea
               v-model="form.message"
               name="message"
               placeholder="Your message"
-              cols="30"
+              
               rows="8"
             ></textarea>
             <button id="submit">Send Message</button>
@@ -138,8 +138,8 @@ import { mapActions, mapState } from "pinia";
 import { useCaseStudiesStore } from "../stores/caseStudies";
 import {useToast} from 'vue-toastification';
 import CustomParticle from "../components/Particle.vue"
-// import {ref} from 'vue';
 import emailjs from 'emailjs-com';
+import { useMessagesStore } from "../stores/messages";
 export default {
   name: "Home-view ",
   data() {
@@ -148,7 +148,6 @@ export default {
         service_ID: "service_hvwtrwj",
         template_ID: "template_qzibjml",
         userID: "nHJqKQDdVHCOHA1Y-",
-
       },
       form: {
         name: "",
@@ -160,6 +159,7 @@ export default {
   },
   methods: {
     ...mapActions(useCaseStudiesStore, ['getArticles']),
+    ...mapActions(useMessagesStore, ['postMessage']),
     sendMail(e){
       emailjs.sendForm(
         this.mailData.service_ID,
@@ -177,6 +177,12 @@ export default {
           const toast = useToast()
           toast.info("Email has been sent")
           // Push form data to database
+          this.postMessage(
+            this.form.name, 
+            this.form.email,
+            this.form.subject,
+            this.form.message
+          )
           // clear form
           this.form.name = "";
           this.form.subject = "";
@@ -464,20 +470,22 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
         display: flex;
         flex-direction: column;
         input[type="text"],
-        input[type="email"] {
-          height: auto;
-          background: rgba(255, 255, 255, 0.3);
-          box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
-          border-radius: 10px;
-          border: none;
-          outline: none;
-          color: #fff;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 143.2%;
-          padding: 10px 20px;
-          margin: 8px 0px;
-        }
+          input[type="email"] {
+            margin: 8px 0px !important; 
+            padding: auto !important;
+            height: auto;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 143.2%;
+            padding: 10px 0px 10px 16px;
+            margin: 8px 0px;
+          }
         textarea {
           background: rgba(255, 255, 255, 0.3);
           box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
@@ -563,26 +571,41 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
       }
       #contact-form {
         margin-top: 10rem;
+        display: grid;
         grid-template-columns: none;
-        grid-template-rows: auto;
-        padding: 8px;
-        h3 {
-          width: 90%;
-          margin: 16px auto;
+        grid-template-rows: auto auto;
+        padding: 8px 4px;
+        .form-desc{
+          h3 {
+            width: 90%;
+            margin: 16px;
+          }
+          p#approach {
+            margin: 24px ;
+            width: 90%;
+          }
         }
-        p#approach {
-          margin: 24px auto;
-          width: 90%;
-        }
-      }
-      #form {
-        input[type="text"],
-        input[type="email"] {
-          margin: 8px 0px;
-          padding: 0px;
-        }
-        textarea {
-          padding: 0px;
+        form {
+          input[type="text"],
+          input[type="email"] {
+            margin: 8px 0px;
+            width: fit-content;
+            padding: auto;
+            height: auto;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 10px 20px rgba(7, 7, 26, 0.15);
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 143.2%;
+          }
+          textarea {
+            padding: 0px;
+            width: 98%;
+          }
         }
       }
     }
