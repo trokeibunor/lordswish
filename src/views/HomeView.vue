@@ -586,10 +586,12 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
           }
         }
         form {
+          width: 90%;
+          margin: 1px auto;
           input[type="text"],
           input[type="email"] {
             margin: 8px 0px;
-            width: fit-content;
+            width: 100%;
             padding: auto;
             height: auto;
             background: rgba(255, 255, 255, 0.3);
@@ -604,7 +606,7 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
           }
           textarea {
             padding: 0px;
-            width: 98%;
+            width: 100%;
           }
         }
       }
