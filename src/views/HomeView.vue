@@ -145,9 +145,9 @@ export default {
   data() {
     return {
       mailData:{
-        service_ID: "service_hvwtrwj",
-        template_ID: "template_qzibjml",
-        userID: "nHJqKQDdVHCOHA1Y-",
+        service_ID: "service_yvgjibc",
+        template_ID: "template_5xlqu6h",
+        userID: "YgFr_HC_CEEFSDd2a",
       },
       form: {
         name: "",
@@ -191,7 +191,7 @@ export default {
         },(error)=>{
           // use toast to show that email has not been sent
           const toast = useToast()
-          toast.error("Email could not be sent please try again later")
+          toast.error("Email could not be sent please try again later: " + error)
         }
         )
     },
