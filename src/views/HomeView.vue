@@ -28,60 +28,23 @@
             <!-- <router-link :to="{name:'case',params: {id: item?.title}}">UI/UX Design, UX Research, Motion Design</router-link> -->
             <p class="note">Role : {{item?.role}}</p>
             <p class="note">Scope : {{item?.scope}}</p>
+            <p class="small">{{item?.timeToRead}} min(s) Read</p>
           </div>
         </router-link>
       </div>
       <h4 id="case">UI projects</h4>
       <!-- project section -->
-      <div class="card-grid">
-        <div class="project-card">
+      <div class="card-grid" v-for="item in this.uiProject" :key="item?.title">
+        <a :href="item?.route" target="_blank" class="project-card">
           <img
-            src="https://picsum.photos/200/400"
+            :src="item?.img_link"
             class="card-img"
             alt=""
             srcset=""
           />
-          <div class="card-desc">
-            <h2>Medical Landing Page</h2>
-            <a href="#">UI, Motion design, Animation</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            src="https://picsum.photos/200/400"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Medical Landing Page</h2>
-            <a href="#">UI, Motion design, Animation</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            src="https://picsum.photos/200/400"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Medical Landing Page</h2>
-            <a href="#">UI, Motion design, Animation</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            src="https://picsum.photos/200/400"
-            class="card-img"
-            alt=""
-            srcset=""
-          />
-          <div class="card-desc">
-            <h2>Medical Landing Page</h2>
-            <a href="#">UI, Motion design, Animation</a>
-          </div>
-        </div>
+          <h2>{{item.title}}</h2>
+          <a href="#">{{item.features}}</a>
+        </a>
       </div>
     </section>
     <!-- contact section -->
@@ -146,7 +109,7 @@ export default {
     return {
       mailData:{
         service_ID: "service_yvgjibc",
-        template_ID: "template_5xlqu6h",
+        template_ID: "template_ms0xoqp",
         userID: "YgFr_HC_CEEFSDd2a",
       },
       form: {
@@ -158,7 +121,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(useCaseStudiesStore, ['getArticles']),
+    ...mapActions(useCaseStudiesStore, ['getArticles','getProjects']),
     ...mapActions(useMessagesStore, ['postMessage']),
     sendMail(e){
       emailjs.sendForm(
@@ -176,31 +139,33 @@ export default {
           // usetoast to show email sent
           const toast = useToast()
           toast.info("Email has been sent")
-          // Push form data to database
-          this.postMessage(
-            this.form.name, 
-            this.form.email,
-            this.form.subject,
-            this.form.message
-          )
-          // clear form
-          this.form.name = "";
-          this.form.subject = "";
-          this.form.message = "";
-          this.form.email = ""
+          try {
+            // Push form data to database
+            this.postMessage(this.form)
+          } catch (error) {
+            console.log(error)
+          }finally{
+            // clear form
+            this.form.name = "";
+            this.form.subject = "";
+            this.form.message = "";
+            this.form.email = ""
+          }
         },(error)=>{
           // use toast to show that email has not been sent
           const toast = useToast()
           toast.error("Email could not be sent please try again later: " + error)
+          console.log(error)
         }
         )
     },
   },
   computed: {
-    ...mapState(useCaseStudiesStore, ['projectInfo'])
+    ...mapState(useCaseStudiesStore, ['projectInfo','uiProject']),
   },
   mounted(){
-    this.getArticles()
+    this.getArticles(),
+    this.getProjects()
   },
   components: {
     footerComponent,
@@ -369,14 +334,15 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
       justify-content: center;
       align-items: flex-start;
       padding: 0px 0px 16px 16px;
-      gap: 16px;
+      gap: 8px;
       background: #0f2b5f;
       border-radius: 0px 0px 20px 20px;
+      min-height: 9.8rem;
       h2 {
         margin: 8px 0px;
         font-weight: 700;
-        font-size: 18px;
-        line-height: 130%;
+        font-size: 16px;
+        line-height: 120%;
         color: #ffffff;
         max-height: 50px;
         overflow: hidden;
@@ -391,39 +357,54 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
       }
       .note {
         margin: 2px 0px;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 100%;
         color: #c4c4c4;
       }
+      .small{
+        margin: 2px 0px;
+        font-size: 12px;
+        line-height: 100%;
+        color: #c4c4c4;
+        background-color:#0b1e42;
+        border-radius: 12px;
+        padding: 6px 10px;
+        display: flex;
+        justify-self: flex-end;
+      }
+
     }
   }
   .project-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #0f2b5f;
+    padding: 8px;
+    border-radius: 8px;
     width: 100%;
     .card-img {
       width: 100%;
       object-fit: cover;
       border-radius: 20px 20px 0px 0px;
-      height: 400px;
+      height:  200px;
+      border-radius: 8px;
     }
-    .card-desc {
-      h2 {
-        margin: 8px 0px;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 130%;
-        color: #ffffff;
-      }
-      a {
-        margin: 2px 0px;
-        font-size: 16px;
-        line-height: 143.2%;
-        color: #c961de;
-        text-decoration: none;
-      }
+    h2 {
+      margin: 8px 0px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 130%;
+      color: #ffffff;
     }
+    a {
+      margin: 2px 0px;
+      font-size: 16px;
+      line-height: 143.2%;
+      color: #c961de;
+      text-decoration: none;
+    }
+
   }
 }
 @media #{$media-mobile} {

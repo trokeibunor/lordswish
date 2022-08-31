@@ -80,6 +80,13 @@ picture{
 }
 .content >>> p{
   margin: 1rem 0;
+  font-size: 16px;
+}
+.content >>> h1{
+  font-size: 22px;
+}
+.content >>> h2 {
+  font-size: 18px;
 }
 .content >>> img{
   border-radius: 4px;

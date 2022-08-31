@@ -24,10 +24,10 @@
         <a href="#"><img src="../assets/images/Instagram.svg" alt="" /></a>
       </li>
       <li>
-        <a href="#"><img src="../assets/images/Twitter.svg" alt="" /></a>
+        <a href="https://twitter.com/Lordswish4?t=9vFgLc76QEugdN6ornY0JA&s=09"><img src="../assets/images/Twitter.svg" alt="" /></a>
       </li>
       <li>
-        <a href="#"><img src="../assets/images/Linkedin.svg" alt="" /></a>
+        <a href="https://www.linkedin.com/in/lordswish-eze-87428020a"><img src="../assets/images/Linkedin.svg" alt="" /></a>
       </li>
       <li>
         <a href="#"><img src="../assets/images/Facebook.svg" alt="" /></a>
@@ -36,7 +36,7 @@
         <a href="#"><img src="../assets/images/BehanceIcon.svg" alt="" /></a>
       </li>
       <li>
-        <a href="#"><img src="../assets/images/medium.svg" alt="" /></a>
+        <a href="https://medium.com/@kinglordswish"><img src="../assets/images/medium.svg" alt="" /></a>
       </li>
     </ul>
     <hr class="footer-divider" />

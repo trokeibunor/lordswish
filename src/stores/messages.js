@@ -1,8 +1,8 @@
 import {defineStore} from 'pinia'
 import { db } from "@/db"
 import {
-    doc,
-    setDoc,
+    collection,
+    addDoc,
 } from "firebase/firestore";
 
 export const useMessagesStore = defineStore('messages', {
@@ -13,7 +13,8 @@ export const useMessagesStore = defineStore('messages', {
         // Post messages to database
         async postMessage({name, email,subject, message}){
             try {
-                await setDoc(doc(db,"messages"),{
+                console.log(name, email, subject, message)
+                await addDoc(collection(db,"messages"),{
                     Name: name,
                     Email: email,
                     Subject: subject,

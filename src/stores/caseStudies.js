@@ -11,7 +11,8 @@ export const useCaseStudiesStore = defineStore({
   id: 'caseStudies',
   state: () => ({
     projectInfo : [],
-    projectDetail: []
+    projectDetail: [],
+    uiProject: []
   }),
   actions: {
     // Get articles
@@ -38,6 +39,18 @@ export const useCaseStudiesStore = defineStore({
         // doc.data() will be undefined in this case
         console.log("No such document!");
       }
+    },
+    // Get UI projects
+    async getProjects(){
+      const querySnapshot = await getDocs(collection(db, "uiprojects"));
+        this.uiProject = [];
+        querySnapshot.forEach((doc) => {
+          const dataObject = doc.data();
+          // Actions can mutate state in pinia
+          // mutate projects
+          this.uiProject.push({ ...dataObject });
+          console.log(this.uiProject);
+        });
     }
   }
 })
