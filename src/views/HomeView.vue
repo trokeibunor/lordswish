@@ -6,7 +6,7 @@
       <h2 id="name">Lordswish</h2>
       <p id="desc">I Design experiences that solve user problems</p>
       <div class="cta">
-        <a href="https://firebasestorage.googleapis.com/v0/b/lordwish-portfolio.appspot.com/o/resumeugo.pdf?alt=media&token=9a4cd104-ace9-47f8-ac6c-c1a090ce06a5" target="_blank" id="resume">Resume</a>
+        <a href="https://drive.google.com/file/d/1S9zKKv9D0jo53mEWo_43bpeivP529w82/view?usp=drivesdk" target="_blank" id="resume">Resume</a>
         <a href="#contact" id="hire">Hire me</a>
       </div>
     </section>
@@ -34,8 +34,8 @@
       </div>
       <h4 id="case">UI projects</h4>
       <!-- project section -->
-      <div class="card-grid" v-for="item in this.uiProject" :key="item?.title">
-        <a :href="item?.route" target="_blank" class="project-card">
+      <div class="card-grid">
+        <a :href="item?.route" v-for="item in this.uiProject" :key="item?.title" target="_blank" class="project-card">
           <img
             :src="item?.img_link"
             class="card-img"
@@ -83,7 +83,6 @@
               v-model="form.message"
               name="message"
               placeholder="Your message"
-              
               rows="8"
             ></textarea>
             <button id="submit">Send Message</button>

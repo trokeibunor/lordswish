@@ -3,6 +3,7 @@ import { db } from "@/db"
 import {
     collection,
     addDoc,
+    serverTimestamp,
 } from "firebase/firestore";
 
 export const useMessagesStore = defineStore('messages', {
@@ -19,7 +20,8 @@ export const useMessagesStore = defineStore('messages', {
                     Email: email,
                     Subject: subject,
                     Message: message,
-                })
+                    receivedAt: serverTimestamp()
+                });
             } catch (error) {
                 console.log(error)
             }
