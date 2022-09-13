@@ -1,5 +1,8 @@
 <template>
   <custom-particle/>
+  <div class="Notif isProcessing" v-if="this.isProcessing">
+      <img src="../assets/images/loader_gif.gif" alt="" srcset="" />
+    </div>
   <div id="wrapper">
     <section id="hero">
       <p id="hi">Hi there! I'm</p>
@@ -100,17 +103,11 @@ import { mapActions, mapState } from "pinia";
 import { useCaseStudiesStore } from "../stores/caseStudies";
 import {useToast} from 'vue-toastification';
 import CustomParticle from "../components/Particle.vue"
-import emailjs from 'emailjs-com';
 import { useMessagesStore } from "../stores/messages";
 export default {
   name: "Home-view ",
   data() {
     return {
-      mailData:{
-        service_ID: "service_yvgjibc",
-        template_ID: "template_ms0xoqp",
-        userID: "YgFr_HC_CEEFSDd2a",
-      },
       form: {
         name: "",
         email: "",
@@ -122,45 +119,33 @@ export default {
   methods: {
     ...mapActions(useCaseStudiesStore, ['getArticles','getProjects']),
     ...mapActions(useMessagesStore, ['postMessage']),
+    toggleLoader(){
+      this.processingSwitch()
+    },
     sendMail(e){
-      emailjs.sendForm(
-        this.mailData.service_ID,
-        this.mailData.template_ID,
-        e.target,
-        this.mailData.userID,{
-            from_name: this.form.name,
-            subject: this.form.subject,
-            message: this.form.message,
-            reply_to: this.form.email,
-          }
-        )
-        .then(()=>{
-          // usetoast to show email sent
-          const toast = useToast()
-          toast.info("Email has been sent")
+      if(this.form.name !== "" 
+        && this.form.email !== "" 
+        && this.form.subject !== "" 
+        && this.form.message !== ""){
           try {
-            // Push form data to database
-            this.postMessage(this.form)
+            this.postMessage(this.form.name,this.form.email,this.form.subject, this.form.message,e.target)
           } catch (error) {
             console.log(error)
           }finally{
-            // clear form
             this.form.name = "";
+            this.form.email = "";
             this.form.subject = "";
             this.form.message = "";
-            this.form.email = ""
           }
-        },(error)=>{
-          // use toast to show that email has not been sent
-          const toast = useToast()
-          toast.error("Email could not be sent please try again later: " + error)
-          console.log(error)
+        } else{
+          const toast = useToast();
+          toast.error("Please fill up the form")
         }
-        )
     },
   },
   computed: {
     ...mapState(useCaseStudiesStore, ['projectInfo','uiProject']),
+    ...mapState(useMessagesStore,['isProcessing'])
   },
   mounted(){
     this.getArticles(),
@@ -182,6 +167,25 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
 #wrapper {
   margin-top: 8rem;
   max-width: 100vw;
+}
+// Notification Style
+.Notif {
+  background-color: #0000008c;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  display: flex;
+}
+.isProcessing {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width: 50px;
+  }
 }
 #hero {
   display: flex;
