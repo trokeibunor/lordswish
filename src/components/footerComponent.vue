@@ -2,19 +2,19 @@
   <!-- Footer Section -->
   <footer>
     <div class="footer-menu">
-      <a href="#" class="menu-item">
+      <RouterLink to="/" class="menu-item">
         <font-awesome-icon icon="home" />
         Home
-      </a>
-      <router-link to="about" class="menu-item">
+      </RouterLink>
+      <RouterLink to="/about" class="menu-item">
         <font-awesome-icon icon="user" />
         About Me
-      </router-link>
-      <a href="" class="menu-item">
+      </RouterLink>
+      <a @click="linker('', 'portfolio' , 'portfoliio')" class="menu-item">
         <font-awesome-icon icon="bag-shopping" />
         Portfolio
       </a>
-      <a href="#" class="menu-item">
+      <a @click="linker('', 'contact', 'contact')"  class="menu-item">
         <font-awesome-icon icon="phone" />
         Contact Me
       </a>
@@ -48,8 +48,16 @@
   </footer>
 </template>
 <script>
+import { RouterLink } from "vue-router";
 export default {
   name: "footerComponent",
+  methods: {
+    linker(link, page, hash){
+      this.currentPage = page;
+      this.$router.push({path: `/${link}`, hash: `#${hash}`});
+      this.dropped = false;
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

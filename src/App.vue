@@ -11,8 +11,8 @@
       <div>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <a href="/#portfolio">Portfolio</a>
-        <RouterLink to="/#contact">Contact me</RouterLink>
+        <a @click="linker('', 'portfolio' , 'portfoliio')">Portfolio</a>
+        <a @click="linker('', 'contact', 'contact')">Contact me</a>
       </div>
       <!-- for mobile menu -->
       <div id="sideMenu" v-if="!dropped" v-on:click="isNotDropped">
@@ -25,10 +25,10 @@
   </nav>
   <!-- Mobile drop down -->
   <div class="dropdown shadow-md" v-if="dropped">
-    <div @click="linker('/', 'home')" :class="{active: currentPage == 'home' }">Home</div>
-    <div @click="linker('/about', 'about')" :class="{active: currentPage == 'about' }">About Me</div>
-    <div @click="linker('/#portfolio', 'portfolio' , 'portfolio')" :class="{active: currentPage == 'portfolio' }">Portfolio</div>
-    <div @click="linker('/#contact', 'contact', 'contact')" :class="{active: currentPage == 'contact' }">Contact Me</div>
+    <div @click="linker('', 'home')" :class="{active: currentPage == 'home' }">Home</div>
+    <div @click="linker('about', 'about')" :class="{active: currentPage == 'about' }">About Me</div>
+    <div @click="linker('', 'portfolio' , 'portfoliio')" :class="{active: currentPage == 'portfolio' }">Portfolio</div>
+    <div @click="linker('', 'contact', 'contact')" :class="{active: currentPage == 'contact' }">Contact Me</div>
   </div>
   <RouterView />
 </template>
@@ -54,9 +54,9 @@ export default {
     isNotDropped: function () {
       this.dropped = true;
     },
-    linker(link, page){
+    linker(link, page, hash){
       this.currentPage = page;
-      this.$router.push(link);
+      this.$router.push({path: `/${link}`, hash: `#${hash}`});
       this.dropped = false;
     }
   },
@@ -101,6 +101,9 @@ body::-webkit-scrollbar-thumb {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+a{
+  cursor: pointer;
 }
 @keyframes rotating {
   from {

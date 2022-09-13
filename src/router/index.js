@@ -24,6 +24,18 @@ const router = createRouter({
       component: CaseStudy,
     },
   ],
+  scrollBehavior(to, from, savedPosition){
+    if (to.hash) {
+      const el = window.location.href.split("#")[1];
+      if (el.length) {
+        document.getElementById(el).scrollIntoView({ behavior: "smooth" });
+      }
+    } else if (savedPosition) {
+      return savedPosition;
+    } else {
+      document.getElementById("app").scrollIntoView({ behavior: "smooth" });
+    }
+  },
 });
 
 export default router;

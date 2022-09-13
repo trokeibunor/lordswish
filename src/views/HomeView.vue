@@ -327,7 +327,7 @@ $media-desktop-strict: "only screen and (min-width: 768px)";
     flex-direction: column;
     .card-img {
       width: 100%;
-      object-fit: cover;
+      object-fit: fill;
       height: 250px;
       border-radius: 20px 20px 0px 0px;
     }
