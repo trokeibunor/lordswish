@@ -29,7 +29,7 @@
         <p>{{item?.tools}}</p>
       </div>
     </div>
-    <p class="text-xl font-bold underline mt-8 mb-2">Project Overview</p>
+    <!-- <p class="text-xl font-bold underline mt-8 mb-2">Project Overview</p> -->
     <div v-html="item?.content" class="content mt-4 mb-8">
     </div>
   </section>
@@ -90,5 +90,8 @@ picture{
 }
 .content >>> img{
   border-radius: 4px;
+}
+.content >>> ul{
+  list-style: disc;
 }
 </style>

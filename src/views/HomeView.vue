@@ -9,7 +9,7 @@
       <h2 id="name">Lordswish</h2>
       <p id="desc">I Design experiences that solve user problems</p>
       <div class="cta">
-        <a href="https://drive.google.com/file/d/1S9zKKv9D0jo53mEWo_43bpeivP529w82/view?usp=drivesdk" target="_blank" id="resume">Resume</a>
+        <a href="https://drive.google.com/file/d/1VW6vCvIZYLs0dz9qIiwTTzsrBlQ_Hy8N/view?usp=drivesdk" target="_blank" id="resume">Resume</a>
         <a href="#contact" id="hire">Hire me</a>
       </div>
     </section>

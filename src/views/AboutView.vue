@@ -16,7 +16,7 @@
           I have worked worked with different companies and worked on different
           projects to deliver value to both users and business owners.
         </p>
-        <a href="https://drive.google.com/file/d/1S9zKKv9D0jo53mEWo_43bpeivP529w82/view?usp=drivesdk" target="_blank"
+        <a href="https://drive.google.com/file/d/1VW6vCvIZYLs0dz9qIiwTTzsrBlQ_Hy8N/view?usp=drivesdk" target="_blank"
           >View My Resume</a
         >
       </div>
